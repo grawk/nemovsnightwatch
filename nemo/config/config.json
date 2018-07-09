@@ -1,0 +1,69 @@
+{
+    "plugins": {
+        "view": {
+            "module": "nemo-view"
+        }
+    },
+    "output": {
+        "reports": "path:report"
+    },
+    "profiles": {
+        "base": {
+            "data": {
+                "baseUrl": "http://localhost:8000"
+            },
+            "tests": "path:./tests/inline.js",
+            "driver": {
+                "builders": {
+                    "withCapabilities": [
+                        {
+                            "browserName": "chrome",
+                            "chromeOptions": {
+                                "args": [
+                                    "headless",
+                                    "window-size=1200,800"
+                                ]
+                            }
+
+                        }
+                    ]
+                }
+            },
+            "mocha": {
+                "timeout": 180000,
+                "reporter": "mochawesome",
+                "reporterOptions": {
+                    "quiet": true
+                }
+            }
+        },
+        "mapped": {
+            "parallel": "data",
+            "tests": "path:./tests/mapped.js",
+            "data": {
+                "good": {
+                    "ccn": "4352332255446655",
+                    "bn": "0654987543d",
+                    "result": ".result.good"
+                },
+                "bad": {
+                    "ccn": "1001001",
+                    "bn": "1001001",
+                    "result": ".result.bad"
+                }
+            }
+        },
+        "chrome": {
+            "driver": {
+                "browser": "chrome",
+                "serverCaps": {
+                    "chromeOptions": {
+                        "args": [
+                            "--start-maximized"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
