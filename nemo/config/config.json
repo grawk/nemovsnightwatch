@@ -1,7 +1,8 @@
 {
     "plugins": {
         "view": {
-            "module": "nemo-view"
+            "module": "nemo-view",
+            "arguments": ["path:locator"]
         }
     },
     "output": {
@@ -9,26 +10,13 @@
     },
     "profiles": {
         "base": {
+            "driver": {
+                "browser": "chrome"
+            },
             "data": {
                 "baseUrl": "http://localhost:8000"
             },
             "tests": "path:./tests/inline.js",
-            "driver": {
-                "builders": {
-                    "withCapabilities": [
-                        {
-                            "browserName": "chrome",
-                            "chromeOptions": {
-                                "args": [
-                                    "headless",
-                                    "window-size=1200,800"
-                                ]
-                            }
-
-                        }
-                    ]
-                }
-            },
             "mocha": {
                 "timeout": 180000,
                 "reporter": "mochawesome",
@@ -37,33 +25,26 @@
                 }
             }
         },
-        "mapped": {
+        "chrome": {
             "parallel": "data",
-            "tests": "path:./tests/mapped.js",
-            "data": {
-                "good": {
-                    "ccn": "4352332255446655",
-                    "bn": "0654987543d",
-                    "result": ".result.good"
-                },
-                "bad": {
-                    "ccn": "1001001",
-                    "bn": "1001001",
-                    "result": ".result.bad"
-                }
+            "tests": "path:./tests/view.js",
+            "data": "require:./config/scenarios",
+            "driver": {
+                "browser": "chrome"
             }
         },
-        "chrome": {
+        "firefox": {
+            "parallel": "data",
+            "tests": "path:./tests/view.js",
+            "data": "require:./config/scenarios",
             "driver": {
-                "browser": "chrome",
-                "serverCaps": {
-                    "chromeOptions": {
-                        "args": [
-                            "--start-maximized"
-                        ]
-                    }
-                }
+                "browser": "firefox"
             }
+        },
+        "flow": {
+            "parallel": "data",
+            "tests": "path:./tests/flow.js",
+            "data": "require:./config/scenarios"
         }
     }
 }

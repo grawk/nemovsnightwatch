@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "base": {
+      "data": {
+        "baseUrl": "https://payfriend.herokuapp.com/"
+      }
+    }
+  }
+}

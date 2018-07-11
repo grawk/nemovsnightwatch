@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "nemo": "nemo -B .",
-    "nemo:grep": "nemo -B . -G @succeed@,@fail@",
-    "nemo:mapped": "nemo -B . -P mapped -G credit,bank",
-    "nemo:parallel": "nemo -B . -P base,chrome",
+    "nemo:parallel": "nemo -B . -P chrome,firefox",
+    "nemo:flow": "nemo -B . -P flow",
     "nemo:debug": "nemo -B . --inspect --inspect-brk"
   },
   "keywords": [],
@@ -16,6 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "lodash.omit": "^4.5.0",
-    "nemo": "4.5.0-alpha.2"
+    "nemo": "^4.5.0"
   }
 }

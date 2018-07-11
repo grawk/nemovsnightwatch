@@ -6,7 +6,6 @@ describe('PayFriend payment methods', function () {
     await nemo.view._present('#email');
     await nemo.view._find('#email').sendKeys('me@mine.com');
     await nemo.view._find('#password').sendKeys('p4w3rD!');
-    await nemo.driver.sleep(100);
     await nemo.view._find('#loginbutton').click();
     await nemo.view._waitVisible('#addccform', 5000);
   });
