@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "nightwatch": "nightwatch",
+    "nightwatch:parallel": "nightwatch -e default,chrome"
   },
   "keywords": [],
   "author": "",

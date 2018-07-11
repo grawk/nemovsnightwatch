@@ -1,6 +1,7 @@
 describe('PayFriend payment methods', function () {
   beforeEach(async function () {
     let nemo = this.nemo;
+    debugger;
     await nemo.driver.get(nemo.data.baseUrl);
     await nemo.view._wait('body[data-loaded=true]');
     await nemo.view._present('#email');
@@ -11,6 +12,7 @@ describe('PayFriend payment methods', function () {
   });
   afterEach(async function () {
     let nemo = this.nemo;
+    await nemo.snap();
     await nemo.view._find('#logoutlink').click();
     await nemo.view._waitVisible('#email', 5000);
   });

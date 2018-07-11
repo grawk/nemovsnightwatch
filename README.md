@@ -1,9 +1,5 @@
 # Nemo vs Nightwatch
 
-Repo comparing Nemo and Nightwatch for automation of browser UI
-
-# Nemo vs Nightwatch
-
 Framework comparison by a _totally neutral party_
 
 ---
@@ -280,3 +276,8 @@ describe('PayFriend payment methods', function () {
 |goals achieved|Winner||
 
 ---
+
+# References
+
+- [Nightwatch](http://nightwatchjs.org)
+- [Nemo](http://nemo.js.org)

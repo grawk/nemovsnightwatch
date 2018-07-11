@@ -1,0 +1,6 @@
+{
+  "form": "#loginform",
+  "email": "#email",
+  "password": "#password",
+  "button": "#loginbutton"
+}

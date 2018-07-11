@@ -1,0 +1,6 @@
+{
+  "jsLoaded": "body[data-loaded=true]",
+  "bankLink": "#addbalink",
+  "cardLink": "#addcclink",
+  "logoutLink": "#logoutlink"
+}
