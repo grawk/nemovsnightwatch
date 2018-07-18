@@ -1,6 +1,6 @@
 # Nemo vs Nightwatch
 
-Framework comparison by a _totally neutral party_
+Node.js Automation Framework comparison
 
 ---
 
@@ -37,8 +37,6 @@ Framework comparison by a _totally neutral party_
 
 # PayFriend Demo
 
-[https://payfriend.herokuapp.com/](https://payfriend.herokuapp.com/)
-
 ---
 
 # Points of comparison
@@ -46,8 +44,10 @@ Framework comparison by a _totally neutral party_
 - documentation/support/community
 - ease of installation
 - configuration/configurability
+- syntax/assertions
 - debugging ability
 - locator/object abstraction
+- reporting
 - automation goals achieved
 
 ---
@@ -58,16 +58,17 @@ Framework comparison by a _totally neutral party_
 
 # Nightwatch
 
-- highly active on stackoverflow
-- hugely popular among node.js open source community
-- very good, complete, single source documentation
+- many questions/answers on stackoverflow
+- popular among node.js open source community
+- good, complete, single source documentation: [http://nightwatchjs.org](http://nightwatchjs.org)
 
 ---
 
 # Nemo
 
-- essentially no open source activity outside of PayPal
-- documentation scattered across three READMEs (nemo, nemo-view, nemo-core)
+- no open source activity outside of PayPal
+- ~~documentation scattered across three READMEs (nemo, nemo-view, nemo-core)~~
+- [http://nemo.js.org](http://nemo.js.org) newly updated for `nemo@4`
 
 ---
 
@@ -89,6 +90,10 @@ Framework comparison by a _totally neutral party_
 
 ---
 
+![fit](nemo-install.png)
+
+---
+
 # Nightwatch
 
 - CLI install
@@ -98,11 +103,17 @@ Framework comparison by a _totally neutral party_
 
 ---
 
+![fit](nw-install.png)
+
+---
+
 # Ease of installation (verdict)
 
 ## Nemo
 
-fewer steps, no standalone to download/maintain
+- fewer steps
+- no standalone server to download/maintain
+- scaffold feature
 
 ---
 
@@ -119,7 +130,34 @@ I like them both. Slight ramp-up in terms of understanding confit's "shortstop h
 Nemo, being based from `selenium-webdriver`, has
 - access to its "Capabilities" APIs
 - WebDriver API and docs
-- async/await syntax
+- more parallel running options
+
+---
+
+# Syntax
+
+Main difference is:
+- nightwatch uses chained syntax and inline assertions
+- nemo uses async/await, whatever assertion libraries you want to use
+
+---
+
+## Chained syntax
+
+More terse. Easier to read. _Until you want to do something interesting_
+
+## Async/await syntax
+
+Enables debugging. Enables branching (experimentation)
+
+___
+
+
+# Syntax: verdict
+
+## Depends
+
+For what I've seen at PayPal, Nemo is better
 
 ---
 
@@ -135,6 +173,7 @@ browser
 browser
       .click('#addbalink', function () {
       	// can set breakpoints here
+        console.log('dummy line of code for a breakpoint');
       })
       .waitForElementVisible('#ban', 3000)
       ...
@@ -239,6 +278,12 @@ describe('PayFriend payment methods', function () {
 
 ---
 
+# ALSO
+
+It would be fairly easy to update `nemo-view` to carry page object functionality
+
+___
+
 # Automation goals
 
 ---
@@ -267,17 +312,43 @@ describe('PayFriend payment methods', function () {
 
 |Category|Nemo|Nightwatch|
 |--- |--- |--- |
-|**Docs/Community**||**Winner**|
-|Installation|Winner||
-|Configuration|Tie|Tie|
-|Configurability|Winner||
-|Debugging|Winner||
-|abstractions||Winner|
-|goals achieved|Winner||
+|**Docs/Community**||**✓**|
+|Installation|✓||
+|Configuration|✓|✓|
+|Configurability|✓||
+|Syntax|✓|✓|
+|Debugging|✓||
+|abstractions||✓|
+|reporting|✓||
+|goals achieved|✓|~✓|
 
 ---
+
+# Summary: continued
+
+- Nemo is currently more popular _at PayPal_
+- With some additional OSS activity, Nemo could be popular _outside of PayPal_
+  - I spent one weekend updating website, adding link to seleniumhq.com
+  - Needs updated open source examples for use within/outside of PayPal
+
+
+---
+
+# Addendum
+
+[webdriver.io](http://webdriver.io)
+
+---
+
+## Webdriver IO solves some of the nightwatch issues we've found:
+- especially debugging/REPL in webdriver
+
+## Webdriver IO still uses selenium-standalone to run
+
+## If I was going to choose between Nightwatch and Webdriver IO, I'd choose Webdriver IO
 
 # References
 
 - [Nightwatch](http://nightwatchjs.org)
 - [Nemo](http://nemo.js.org)
+- [webdriver.io](http://webdriver.io)

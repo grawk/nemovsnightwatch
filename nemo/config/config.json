@@ -5,7 +5,7 @@
             "arguments": ["path:locator"]
         }
     },
-    "output": {
+    "output": { // here is my output
         "reports": "path:report"
     },
     "profiles": {
