@@ -2,24 +2,9 @@
 
 Node.js Automation Framework comparison
 
-![fit](static/drseuss.png)
-
 ---
 
-# Thank you for inviting me!!
-
-## eBates/Rakuten
-
-- Vikrant Maniar
-- Jigish Mehta
-
-![left](static/bow.png)
-
----
-
-![](static/forrest.jpg)
-
----
+Me
 
 - At PayPal for 11 years
 - Web developer in
@@ -31,13 +16,9 @@ Node.js Automation Framework comparison
 - Infrastructure engineering manager (2 yrs)
 
 
-![](static/forrest.jpg)
-
 ---
 
 # Selecting a node.js test framework
-
-![left fit](static/choose.jpg)
 
 ---
 
@@ -45,8 +26,6 @@ Node.js Automation Framework comparison
 ## [webdriver.io](http://webdriver.io)
 ## [nightwatch](http://nightwatchjs.org)
 ## [nemo](http://nemo.js.org)
-
-![left fit](static/choose.jpg)
 
 ---
 
@@ -69,13 +48,11 @@ Node.js Automation Framework comparison
 
 # Nemo vs Nightwatch
 
-![left](static/hippo.png)
 
 ---
 
 # Nemo Introduction
 
-![left](static/Nemo.png)
 
 ---
 
@@ -90,7 +67,6 @@ Node.js Automation Framework comparison
 
 # Nightwatch Introduction
 
-![left](static/nightwatch.jpg)
 
 ---
 
@@ -104,7 +80,6 @@ Node.js Automation Framework comparison
 
 # Automation goals
 
-![left](static/rube-goldberg-machine-cartoon-A.jpg)
 
 ---
 
@@ -117,9 +92,6 @@ Node.js Automation Framework comparison
 
 ---
 
-![fit](static/payfriend.png)
-
----
 
 # Documentation/Community/Support
 
@@ -143,7 +115,6 @@ Node.js Automation Framework comparison
 
 # Documentation/Community/Support (verdict)
 
-![left](static/nightwatch.jpg)
 
 ---
 
@@ -152,7 +123,6 @@ Node.js Automation Framework comparison
 - maintained/relied upon for many high-traffic apps at PayPal
 - uses `selenium-webdriver`
 
-![left](static/Nemo.png)
 
 ---
 
@@ -168,7 +138,6 @@ Node.js Automation Framework comparison
 
 ---
 
-![fit](static/nemo-install.png)
 
 ---
 
@@ -181,7 +150,6 @@ Node.js Automation Framework comparison
 
 ---
 
-![fit](static/nw-install.png)
 
 ---
 
@@ -191,7 +159,6 @@ Node.js Automation Framework comparison
 - no standalone server to download/maintain
 - scaffold feature
 
-![left](static/Nemo.png)
 
 ---
 
@@ -237,7 +204,6 @@ Nemo, being based from `selenium-webdriver`, has
 - WebDriver API and docs
 - more parallel running options
 
-![left](static/Nemo.png)
 
 ---
 
@@ -266,7 +232,6 @@ ___
 
 Nemo/Selenium-webdriver synchronous syntax and execution allows for better debugging experience and code branching
 
-![left](static/Nemo.png)
 
 ---
 
@@ -309,7 +274,6 @@ Just use Node's `--inspect-brk` CLI flag
 
 No need to modify code to breakpoint debug. Use Node's native inspect flag
 
-![left](static/Nemo.png)
 
 ---
 
@@ -360,7 +324,6 @@ No need to modify code to breakpoint debug. Use Node's native inspect flag
 
 ## Nightwatch has more structured "page object"
 
-![left](static/nightwatch.jpg)
 
 ---
 
@@ -397,7 +360,6 @@ describe('PayFriend payment methods', function () {
 - time and tag-based folder structure for historic retention
 - screenshots into reports
 
-![left](static/Nemo.png)
 
 ___
 
@@ -421,7 +383,6 @@ ___
 
 # Automation goals (verdict)
 
-![left](static/Nemo.png)
 
 ---
 
