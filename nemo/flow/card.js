@@ -1,11 +1,11 @@
 module.exports.to = async function () {
-  let nemo = this.nemo;
+  let nemo = this.nemo || arguments[0].nemo;
   let {card, nav} = nemo.view;
   await nav.cardLink().click();
   await card.form.waitVisible(5000);
 };
 module.exports.add = async function () {
-  let nemo = this.nemo;
+  let nemo = this.nemo || arguments[0].nemo;
   let {card} = nemo.view;
   await card.form.waitVisible(5000);
   await card.ccn().sendKeys(nemo.data.ccn);

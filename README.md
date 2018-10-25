@@ -2,53 +2,122 @@
 
 Node.js Automation Framework comparison
 
+![fit](static/drseuss.png)
+
+---
+
+# Thank you for inviting me!!
+
+## eBates/Rakuten
+
+- Vikrant Maniar
+- Jigish Mehta
+
+![left](static/bow.png)
+
+---
+
+![](static/forrest.jpg)
+
+---
+
+- At PayPal for 11 years
+- Web developer in
+  - "maxcode" (1 yr)
+  - xslt/C++ (4 yrs)
+  - Java (1 yr)
+  - node.js (2 yrs)
+- node.js Infrastructure engineer (1 yr)
+- Infrastructure engineering manager (2 yrs)
+
+
+![](static/forrest.jpg)
+
+---
+
+# Selecting a node.js test framework
+
+![left fit](static/choose.jpg)
+
+---
+
+## [cypress.io](https://www.cypress.io)
+## [webdriver.io](http://webdriver.io)
+## [nightwatch](http://nightwatchjs.org)
+## [nemo](http://nemo.js.org)
+
+![left fit](static/choose.jpg)
+
+---
+
+# Selection criteria
+
+|Category|Framework 1|Framework 2|
+|--- |--- |--- |
+|Docs/Community|||
+|Enterprise support|||
+|Installation|||
+|Configuration|||
+|Configurability|||
+|Syntax|||
+|Debugging|||
+|Abstractions|||
+|Reporting|||
+|automation goals achieved|||
+
+---
+
+# Nemo vs Nightwatch
+
+![left](static/hippo.png)
+
 ---
 
 # Nemo Introduction
+
+![left](static/Nemo.png)
+
+---
 
 - uses `selenium-webdriver`
 - write mocha tests
 - `WebDriver` API available as `this.nemo.driver`
 - nemo's "view" abstractions: `this.nemo.view`
 - enhanced JSON configuration (confit)
-- "popular" at PayPal (~250 github stars)
+- popular at PayPal (~250 github stars)
 
 ---
 
 # Nightwatch Introduction
 
-- implements own wire protocol commands
+![left](static/nightwatch.jpg)
+
+---
+
+- maintains its own wire protocol commands
 - write built-in, or mocha exports style tests
 - API available as argument to test methods
 - JSON or JS configuration file
-- popular everywhere (~8,000 github stars)
+- popular (~8,000 github stars)
 
 ---
 
 # Automation goals
+
+![left](static/rube-goldberg-machine-cartoon-A.jpg)
+
+---
 
 - write tests for positive, negative, experimentation use cases
 - data-drive positive and negative use cases
 - configure/run tests against local and deployed environments
 - breakpoint debugging
 - abstract locators into views/page objects
+- speed
 
 ---
 
-# PayFriend Demo
-
----
-
-# Points of comparison
-
-- documentation/support/community
-- ease of installation
-- configuration/configurability
-- syntax/assertions
-- debugging ability
-- locator/object abstraction
-- reporting
-- automation goals achieved
+![fit](static/payfriend.png)
 
 ---
 
@@ -60,21 +129,30 @@ Node.js Automation Framework comparison
 
 - many questions/answers on stackoverflow
 - popular among node.js open source community
-- good, complete, single source documentation: [http://nightwatchjs.org](http://nightwatchjs.org)
+- documentation website: [http://nightwatchjs.org](http://nightwatchjs.org)
 
 ---
 
 # Nemo
 
-- no open source activity outside of PayPal
-- ~~documentation scattered across three READMEs (nemo, nemo-view, nemo-core)~~
-- [http://nemo.js.org](http://nemo.js.org) newly updated for `nemo@4`
+- little open source activity outside of PayPal
+- relatively unknown in node.js open source community
+- documentation website: [http://nemo.js.org](http://nemo.js.org)
 
 ---
 
 # Documentation/Community/Support (verdict)
 
-## Nightwatch
+![left](static/nightwatch.jpg)
+
+---
+
+# Enterprise support
+
+- maintained/relied upon for many high-traffic apps at PayPal
+- uses `selenium-webdriver`
+
+![left](static/Nemo.png)
 
 ---
 
@@ -84,13 +162,13 @@ Node.js Automation Framework comparison
 
 # Nemo
 
-- CLI install
+- CLI install (`npm install nemo`)
 - CLI setup (`nemo -X`)
 - download `chromedriver`
 
 ---
 
-![fit](nemo-install.png)
+![fit](static/nemo-install.png)
 
 ---
 
@@ -103,34 +181,63 @@ Node.js Automation Framework comparison
 
 ---
 
-![fit](nw-install.png)
+![fit](static/nw-install.png)
 
 ---
 
 # Ease of installation (verdict)
 
-## Nemo
-
 - fewer steps
 - no standalone server to download/maintain
 - scaffold feature
+
+![left](static/Nemo.png)
+
+---
+
+# Selenium processes
+
+![50%](static/selenium.png)
+
+---
+
+![fit](static/processes.jpg)
+
+---
+
+![fit](static/processes-drivers.png)
+
+---
+
+![fit](static/processes-nightwatch.png)
+
+---
+
+![fit](static/processes-nemo.png)
+
+---
+
+![fit](static/processes-ci.png)
 
 ---
 
 # Configuration (verdict)
 
-I like them both. Slight ramp-up in terms of understanding confit's "shortstop handlers" but they can make configuration more efficient.
+No preference.
+
+- nightwatch: plain old JS and JSON
+- nemo: Slight ramp-up in terms of understanding "shortstop handlers" but boilerplate is reduced
 
 ---
 
 # Configurability (verdict)
 
-## Nemo
-
 Nemo, being based from `selenium-webdriver`, has
 - access to its "Capabilities" APIs
 - WebDriver API and docs
 - more parallel running options
+
+![left](static/Nemo.png)
 
 ---
 
@@ -144,7 +251,7 @@ Main difference is:
 
 ## Chained syntax
 
-More terse. Easier to read. _Until you want to do something interesting_
+More terse. Easier to read. _Until you want to do something interesting_.
 
 ## Async/await syntax
 
@@ -155,9 +262,11 @@ ___
 
 # Syntax: verdict
 
-## Depends
+## Nemo
 
-For what I've seen at PayPal, Nemo is better
+Nemo/Selenium-webdriver synchronous syntax and execution allows for better debugging experience and code branching
+
+![left](static/Nemo.png)
 
 ---
 
@@ -198,7 +307,9 @@ Just use Node's `--inspect-brk` CLI flag
 
 # Debugging (verdict)
 
-Nemo. No need to modify code to breakpoint debug. Use Node's native inspect flag
+No need to modify code to breakpoint debug. Use Node's native inspect flag
+
+![left](static/Nemo.png)
 
 ---
 
@@ -247,7 +358,9 @@ Nemo. No need to modify code to breakpoint debug. Use Node's native inspect flag
 
 # Locator/Page Object Abstraction (verdict)
 
-## Nightwatch OOTB
+## Nightwatch has more structured "page object"
+
+![left](static/nightwatch.jpg)
 
 ---
 
@@ -263,13 +376,13 @@ describe('PayFriend payment methods', function () {
   afterEach(auth.logout);
 
   it('try adding a credit card', async function () {
-    await card.to.call(this);
-    await card.add.call(this);
+    await card.to(this);
+    await card.add(this);
   });
 
   it('should try adding a bank account', async function () {
-    await bank.to.call(this);
-    await bank.add.call(this);
+    await bank.to(this);
+    await bank.add(this);
   });
 
 });
@@ -278,9 +391,13 @@ describe('PayFriend payment methods', function () {
 
 ---
 
-# ALSO
+# Reporting
 
-It would be fairly easy to update `nemo-view` to carry page object functionality
+- uses [mochawesome](https://www.npmjs.com/package/mochawesome) (local) or xunit (Jenkins/CI)
+- time and tag-based folder structure for historic retention
+- screenshots into reports
+
+![left](static/Nemo.png)
 
 ___
 
@@ -304,7 +421,7 @@ ___
 
 # Automation goals (verdict)
 
-## Nemo
+![left](static/Nemo.png)
 
 ---
 
@@ -312,11 +429,12 @@ ___
 
 |Category|Nemo|Nightwatch|
 |--- |--- |--- |
-|**Docs/Community**||**✓**|
+|Docs/Community||✓|
+|Enterprise support|✓||
 |Installation|✓||
 |Configuration|✓|✓|
 |Configurability|✓||
-|Syntax|✓|✓|
+|Syntax|✓||
 |Debugging|✓||
 |abstractions||✓|
 |reporting|✓||
@@ -330,25 +448,41 @@ ___
 - With some additional OSS activity, Nemo could be popular _outside of PayPal_
   - I spent one weekend updating website, adding link to seleniumhq.com
   - Needs updated open source examples for use within/outside of PayPal
+  - Gitter or StackOverflow activity would be a plus
 
 
 ---
 
 # Addendum
 
+---
+
 [webdriver.io](http://webdriver.io)
 
 ---
 
-## Webdriver IO solves some of the nightwatch issues we've found:
-- especially debugging/REPL in webdriver
+Webdriver IO solves some of the nightwatch issues we've found:
 
-## Webdriver IO still uses selenium-standalone to run
+- debugging/REPL in webdriver
 
-## If I was going to choose between Nightwatch and Webdriver IO, I'd choose Webdriver IO
+Webdriver IO still uses selenium-standalone to run
 
-# References
+- If I was going to choose between Nightwatch and Webdriver IO, I'd choose Webdriver IO
 
-- [Nightwatch](http://nightwatchjs.org)
-- [Nemo](http://nemo.js.org)
-- [webdriver.io](http://webdriver.io)
+---
+
+# [cypress.io](https://www.cypress.io)
+
+---
+
+Cypress.io generates a lot of excitement based on its up front developer experience. But currently does not provide selenium interoperability or browser support beyond Google Chrome. Keep an eye on it!
+
+---
+
+# Nemo: practical usage
+
+---
+
+![fit](static/jenkins.png)
+
+---

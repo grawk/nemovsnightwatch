@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "nightwatch": "nightwatch",
+    "nightwatch:prod": "NODE_ENV=production nightwatch",
     "nightwatch:parallel": "nightwatch -e default,chrome"
   },
   "keywords": [],
